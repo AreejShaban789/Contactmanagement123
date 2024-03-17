@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('content')
+
 <br><br>
-<div class="container"> 
+<div class="container">
     <br>
     <h1 class="" style="color: #2487c0">Contact Management System</h1>
     <br>
@@ -9,7 +10,9 @@
         <div>
             <a class="btn btn-success" href="{{ route('contact.create') }}">Add Contact</a>
         </div>
-    </div> 
+
+    </div>
+    @include('alert')
     <table id="contacts-table" class="table table-stripped">
         <thead class="table-dark">
             <tr>
@@ -22,12 +25,34 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Contacts will be dynamically inserted here -->
+            <tr>
+
+                @foreach ($contacts as $contact)
+               <tr>
+
+        <td>{{ $contact->id }}</td>
+        <td>{{ $contact->name }}</td>
+        <td> {{ $contact->email }}</td>
+        <td> {{ $contact->phone }}</td>
+        <td> {{ $contact->address }}</td>
+
+
+
+
+       <td>
+
+        <a class="btn btn-primary btn-sm"
+            href="{{ route('contact.edit', ['id' => $contact->id]) }}"><i class="fa fa-edit"></i></a>
+
+                <a class="btn btn-danger btn-sm" href="{{ route('contact.delete', ['id' => $contact->id]) }}"><i class="fa fa-trash"></i></a></td>
+
+    </tr>
+    @endforeach
         </tbody>
     </table>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@endsection
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
     // Function to fetch contacts from the backend
@@ -38,7 +63,7 @@ $(document).ready(function() {
             success: function(response) {
                 // Clear existing contacts
                 $('#contacts-table tbody').empty();
-                
+
                 // Iterate over each contact in the response and append to the table
                 $.each(response, function(index, contact) {
                     $('#contacts-table tbody').append(`
@@ -84,13 +109,13 @@ $(document).ready(function() {
         }
     });
 });
-</script>
+</script> --}}
 
-@endsection
-@extends('layouts.master')
+
+{{-- @extends('layouts.master')
 @section('content')
 <br><br>
-<div class="container"> 
+<div class="container">
     <br>
     <h1 class="" style="color: #2487c0">Contact Management System</h1>
     <br>
@@ -98,7 +123,7 @@ $(document).ready(function() {
         <div>
             <a class="btn btn-success" href="{{ route('contact.create') }}">Add Contact</a>
         </div>
-    </div> 
+    </div>
     <table id="contacts-table" class="table table-stripped">
         <thead class="table-dark">
             <tr>
@@ -127,7 +152,7 @@ $(document).ready(function() {
             success: function(response) {
                 // Clear existing contacts
                 $('#contacts-table tbody').empty();
-                
+
                 // Iterate over each contact in the response and append to the table
                 $.each(response, function(index, contact) {
                     $('#contacts-table tbody').append(`
@@ -175,4 +200,4 @@ $(document).ready(function() {
 });
 </script>
 
-@endsection
+@endsection --}}
