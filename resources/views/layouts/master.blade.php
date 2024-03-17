@@ -12,6 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link href="path/to/bootstrap.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">                           
         <script src="path/to/jquery.min.js"></script>
         <script src="path/to/popper.min.js"></script>
         <script src="path/to/bootstrap.min.js"></script>
@@ -45,13 +46,13 @@
   opacity: 0.8;
  
 }
- /* body{
-   background-image: url('assetsfront/img/background.png');
+ body{
+   background-image: url('asssets/img/background.png');
  background-size: cover; 
   background-position: center;  
   height: 100%;
   width: 100%;
-} */
+}
 
 </style>
 
@@ -75,9 +76,9 @@
                       </a></li>
                 {{-- &nbsp;&nbsp;  &nbsp;&nbsp; --}}
                 <li class="nav-item">
-                  <a class="nav-link" href="/blog">
-                    <i class="fa fa-globe text-white"></i>
-                    About Us</a>
+                  <a class="nav-link" href="/create">
+                    <i class="fa fa-bars text-white"></i>
+                    Forms</a>
                 </li>
 
 
@@ -153,7 +154,7 @@
             </div>
           </div>
         </footer>
-      <br><hr>
+      <hr>
 
       
       <p class="text-center">© Copyright {{ date('Y') }} | All Rights Reserved | <a
